@@ -33,3 +33,5 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 });
+Route::get('/redirect', [App\Http\Controllers\Socialite\AuthController::class, 'redirectToProvider'])->name('google');
+Route::get('/callback', [App\Http\Controllers\Socialite\AuthController::class, 'handleProviderCallback']);
